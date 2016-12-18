@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+<p><%= notice %></p>
+
+<% @welcomes.each do |welcome| %>
+
+  <p>本文:<%= welcome.content %></p>
+  <%= link_to "ツイートを編集する", edit_welcome_path(welcome.id), data: { confirm: '編集しますか？'}, class: 'btn btn-info btn-large'  %> 
+  <%= link_to "ツイートを削除する", welcome_path(welcome.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-info btn-large' %>
+<% end %>
+
+<%= link_to "ツイートをする", new_welcome_path, class: 'btn btn-primary btn-large' %>
+  </div>
+</div>
+
+  <div id="page-top-btn" class="page-top-btn">
+    <p><a class="move-page-top" id="move-page-top">▲</a></p>
+  </div>
